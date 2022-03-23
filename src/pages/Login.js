@@ -10,17 +10,6 @@ const Login = () => {
   const emailRef = useRef();
   const passwordRef = useRef();
 
-  async function handleSignup() {
-    try {
-      await signup(emailRef.current.value, passwordRef.current.value);
-      console.log(currentUser);
-    }
-    catch {
-      console.log("ERROR SIGNING UP: Login.js");
-    }
-    
-  }
-
   async function handleLogin() {
     setStateLoading(true);
     try {
@@ -32,16 +21,6 @@ const Login = () => {
     }
     setStateLoading(false);
     
-  }
-
-  async function handleLogout() {
-    try {
-      await logout();
-      console.log("LOGGING OUT: ",currentUser);
-    }
-    catch {
-      console.log("ERROR LOGGING OUT: Login.js");
-    }
   }
 
   return (
